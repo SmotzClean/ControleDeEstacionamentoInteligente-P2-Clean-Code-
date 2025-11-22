@@ -6,7 +6,7 @@ Também existe um relatório simples mostrando o total de cada tipo de veículo 
 ## Requisitos
 
 - PHP 8 ou superior
-- SQLite (já incluso no PHP em geral)
+- SQLite
 - Composer
 
 ## Como instalar
@@ -16,9 +16,6 @@ Também existe um relatório simples mostrando o total de cada tipo de veículo 
 3. Rode o comando:
 
 composer install
-
-bash
-Copiar código
 
 Isso vai instalar o autoload do Composer.
 
@@ -31,9 +28,6 @@ No terminal:
 
 sqlite3 parking.db < Infra/Database/migrate.sql
 
-perl
-Copiar código
-
 Ou você pode só abrir o SQLite e colar o conteúdo do arquivo `migrate.sql`.
 
 O arquivo `parking.db` precisa ficar na pasta `Infra/Database` (igual no código).
@@ -44,15 +38,9 @@ Basta iniciar um servidor PHP dentro da pasta do projeto:
 
 php -S localhost:8080
 
-yaml
-Copiar código
-
 Depois abra o navegador:
 
 http://localhost:8080/index.php
-
-markdown
-Copiar código
 
 ## Como usar
 
