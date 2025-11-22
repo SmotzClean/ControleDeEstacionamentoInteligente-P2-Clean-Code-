@@ -1,7 +1,10 @@
+
+
 # Sistema de Controle de Estacionamento
 
 Este projeto implementa um sistema simples para registrar a entrada e saída de veículos e calcular o valor a ser pago conforme o tempo de permanência.  
-Também é possível visualizar um relatório geral contendo o total de veículos atendidos e o faturamento por tipo.
+Também foi desenvolvido com o objetivo de praticar princípios como SOLID, DRY, KISS, boas práticas de Clean Code e alguns conceitos de Object Calisthenics, utilizando PHP 8+, Composer e SQLite em uma estrutura modular organizada nas pastas `Application`, `Domain` e `Infra`.  
+O sistema ainda apresenta um relatório geral contendo o total de veículos atendidos e o faturamento por tipo.
 
 ## Requisitos
 
