@@ -1,75 +1,69 @@
-# Projeto Estacionamento
+# Sistema de Controle de Estacionamento
 
-Este projeto foi feito para controlar a entrada e saída de veículos e calcular o valor a pagar de acordo com o tempo que o veículo ficou no estacionamento.  
-Também existe um relatório simples mostrando o total de cada tipo de veículo e o faturamento.
+Este projeto implementa um sistema simples para registrar a entrada e saída de veículos e calcular o valor a ser pago conforme o tempo de permanência.  
+Também é possível visualizar um relatório geral contendo o total de veículos atendidos e o faturamento por tipo.
 
 ## Requisitos
 
-- PHP 8 ou superior
-- SQLite
-- Composer
+- PHP 8 ou superior  
+- SQLite  
+- Composer  
 
-## Como instalar
+## Instalação
 
-1. Baixe ou clone o projeto.
-2. Abra a pasta do projeto no terminal.
-3. Rode o comando:
+1. Acesse a pasta do projeto pelo terminal.  
+2. Execute o comando:
 
 composer install
 
-Isso vai instalar o autoload do Composer.
+Isso inicializa o autoload do Composer.
 
-## Criar o banco de dados
+## Banco de Dados
 
-O banco é um arquivo SQLite.  
-Para criar ele, basta rodar o arquivo SQL que está na pasta `Infra/Database`.
+O sistema utiliza um banco SQLite.  
+A tabela necessária é criada a partir do arquivo `migrate.sql`, localizado em `Infra/Database/`.
 
-No terminal:
+Para gerar o banco:
 
 sqlite3 parking.db < Infra/Database/migrate.sql
 
-Ou você pode só abrir o SQLite e colar o conteúdo do arquivo `migrate.sql`.
+O arquivo `parking.db` deve permanecer na pasta `Infra/Database`.
 
-O arquivo `parking.db` precisa ficar na pasta `Infra/Database` (igual no código).
+## Execução
 
-## Como executar o projeto
-
-Basta iniciar um servidor PHP dentro da pasta do projeto:
+Para iniciar o sistema, execute no terminal:
 
 php -S localhost:8080
 
-Depois abra o navegador:
+Em seguida, acesse no navegador:
 
 http://localhost:8080/index.php
 
-## Como usar
+## Utilização
 
 ### Entrada de veículo
-- Informar a placa
-- Escolher o tipo
-- Clicar em "Registrar Entrada"
+- Informe a placa.  
+- Selecione o tipo de veículo.  
+- Confirme o registro.  
 
 ### Saída de veículo
-- Informar a placa
-- Clicar em "Registrar Saída"
-- O sistema mostra o valor a pagar
+- Informe a placa cadastrada.  
+- O sistema apresenta o valor calculado automaticamente.  
 
 ### Relatório
-- Clique em “Ver relatório”
-- Será exibida uma tabela com:
-  - tipo do veículo
-  - quantidade
-  - faturamento total
+- Exibe uma tabela com:
+  - Tipo de veículo  
+  - Total de registros finalizados  
+  - Faturamento correspondente  
 
-## Estrutura básica
+## Estrutura do Projeto
 
-- `index.php` → tela principal e rotas simples
-- `Application/` → controllers e services
-- `Domain/` → entidades, enums e repositórios
-- `Infra/` → banco de dados e pasta http
-- `vendor/` → gerado pelo Composer
+- `index.php` — Interface principal e roteamento básico.  
+- `Application/` — Classes de controle e serviços de aplicação.  
+- `Domain/` — Entidades, enums e interfaces de repositório.  
+- `Infra/` — Implementação do repositório e arquivos de banco de dados.  
+- `vendor/` — Dependências geradas pelo Composer.  
 
 ## Observações
 
-O projeto usa apenas PHP puro, sem framework.  
-Todo o cálculo e regras estão nos arquivos da pasta `Application` e `Domain`.
+O projeto é desenvolvido em PHP puro, com foco na organização das camadas e na separação das responsabilidades principais do sistema.
